@@ -3,18 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff6ec;
+  --foreground: #3a2a22;
+  --muted: #8c7062;
+  /* 크림 → 연한 살구 */
+  --gradient: linear-gradient(170deg, #fffaf3 0%, #fdeee2 45%, #f9dcc8 100%);
+  /* 유리 카드 뒤에서 은은하게 비치는 빛 번짐 */
+  --glow-1: rgba(255, 196, 160, 0.45);
+  --glow-2: rgba(255, 233, 204, 0.7);
 }
 
 .dark {
-  --background: #0f1411;
-  --foreground: #ededed;
+  --background: #1a1310;
+  --foreground: #f3e7dd;
+  --muted: #b39a8c;
+  --gradient: linear-gradient(170deg, #1d1512 0%, #241914 50%, #2d1e17 100%);
+  --glow-1: rgba(214, 128, 86, 0.16);
+  --glow-2: rgba(240, 190, 140, 0.07);
 }
 
 body {
+  min-height: 100vh;
+  min-height: 100dvh;
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans), "Apple SD Gothic Neo", "Noto Sans KR",
-    sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS Safari는 background-attachment: fixed를 무시하므로 고정 레이어로 깝니다. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 45% at 15% 10%, var(--glow-2), transparent 70%),
+    radial-gradient(55% 40% at 90% 85%, var(--glow-1), transparent 70%),
+    var(--gradient);
 }

@@ -12,8 +12,8 @@ export type LinkItem = {
 
 // TODO: 아래는 화면 확인용 더미 값입니다. 실제 프로필과 링크로 교체하세요.
 export const profile: Profile = {
-  name: "김클로",
-  bio: "세계 최강 바이브코더",
+  name: "nookworks",
+  bio: "방구석개발공방:AI coder",
   image: "/profile.svg",
 };
 

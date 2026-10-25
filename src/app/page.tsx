@@ -5,15 +5,15 @@ import { links, profile } from "@/data/profile";
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-md px-4 pb-12 pt-16">
+    <main className="mx-auto w-full max-w-[26rem] px-7 pb-20 pt-24 sm:px-8 sm:pt-28">
       {/* 와이어프레임에는 없지만 PRD의 다크모드 기능을 위해 우측 상단에 둡니다. */}
-      <div className="fixed right-4 top-4">
+      <div className="fixed right-5 top-5 z-10">
         <ThemeToggle />
       </div>
 
       <ProfileHeader profile={profile} />
 
-      <nav className="mt-8 flex flex-col gap-4">
+      <nav className="mt-12 flex flex-col gap-4">
         {links.map((link) => (
           <LinkCard key={link.id} link={link} />
         ))}
