@@ -1,4 +1,4 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import ProfileHeader from "@/components/ProfileHeader";
 import ThemeToggle from "@/components/ThemeToggle";
 import { links, profile } from "@/data/profile";
@@ -13,11 +13,7 @@ export default function Home() {
 
       <ProfileHeader profile={profile} />
 
-      <nav className="mt-12 flex flex-col gap-4">
-        {links.map((link) => (
-          <LinkCard key={link.id} link={link} />
-        ))}
-      </nav>
+      <LinkList links={links} />
     </main>
   );
 }
